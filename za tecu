@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitanje ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 150px;
+            font-family: 'Arial', sans-serif;
+            background-color: #fff5f8;
+        }
+        h2 {
+            color: #d63384;
+            font-size: 36px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+            transition: 0.3s;
+        }
+        #daBtn {
+            background-color: #ff4d6d;
+            color: white;
+        }
+        #neBtn {
+            background-color: #6c757d;
+            color: white;
+            position: absolute;
+            margin-left: 10px;
+        }
+        #poruka {
+            margin-top: 40px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff4d6d;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Da li me voliš? ❤️</h2>
+
+    <button id="daBtn" class="btn" onclick="prikaziPoruku()">DA!</button>
+    <button id="neBtn" class="btn" onmouseover="bezi()">NE</button>
+
+    <p id="poruka"></p>
+
+    <script>
+        function prikaziPoruku() {
+            document.getElementById("poruka").innerHTML = "JA TEBE NAJVIŠE! ❤️❤️❤️";
+            // Sakrijemo NE dugme kad se klikne DA
+            document.getElementById("neBtn").style.display = "none";
+        }
+
+        function bezi() {
+            const btn = document.getElementById("neBtn");
+            // Nasumično pomjeranje dugmeta po ekranu
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+    </script>
+
+</body>
+</html>
